@@ -1,0 +1,2 @@
+Oct 08, 2020 11:52:47 AM utils.FileLogger log
+SEVERE: The first log message

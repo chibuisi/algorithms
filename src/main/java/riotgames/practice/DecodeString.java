@@ -7,9 +7,9 @@ public class DecodeString {
 
     }
     public static String decodeString(String str){
-        Stack<Character> chars = new Stack<>();
-        Stack<Integer> values = new Stack<>();
-        String result = "";
+        Stack<String> result = new Stack<>();
+        Stack<Integer> counts = new Stack<>();
+        String res = "";
         int index = 0;
 
         while(index < str.length()){
@@ -20,27 +20,27 @@ public class DecodeString {
                     count = count * 10 + (str.charAt(index)) - '0';
                     index++;
                 }
-                values.push(count);
+                counts.push(count);
             }
-            if(str.charAt(index) == '['){
-                chars.push(str.charAt(index));
-                result = "";
+            else if(c == '['){
+                result.push(res);
+                res = "";
                 index++;
             }
-            else if(str.charAt(index) == ']'){
-                StringBuilder temp = new StringBuilder(chars.pop());
-                int count = values.pop();
+            else if(c == ']'){
+                StringBuilder temp = new StringBuilder(result.pop());
+                int count = counts.pop();
                 for(int i = 0; i < count; i++){
-                    temp.append(result);
+                    temp.append(res);
                 }
-                result = temp.toString();
+                res = temp.toString();
                 index++;
             }
             else{
-                result += str.charAt(index);
+                res += c;
                 index++;
             }
         }
-        return result;
+        return res;
     }
 }

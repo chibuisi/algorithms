@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class DecodeString {
     public static void main(String[] args) {
-        String s = "3[a]2[bc]";
+        String s = "3[a]2[3[q]bc]";
         System.out.println(decode(s));
     }
     public static String decode(String str){

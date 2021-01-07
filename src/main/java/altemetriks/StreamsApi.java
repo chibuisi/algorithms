@@ -39,14 +39,14 @@ public class StreamsApi {
                 .collect((Collectors.groupingBy(Function.identity())));
         //values.forEach((s, strings) -> System.out.println(strings));
         values.forEach((key, vals) -> System.out.println(key + ": " +vals.size()));
-        //System.out.println(values);
+        System.out.println(values);
     }
 
     public void countOccurencesOfSameWord(){
         String s = "This sia eclipse eclipse random Eclipse ecliPse not a valid ECLIPSE sdfdsf sdfd";
-        Map<String,Integer> values = Arrays.stream(s.split(" ")).distinct()
+        Map<String,Integer> values = Arrays.stream(s.split(" ")).filter(str -> str.equalsIgnoreCase("eclipse")).distinct()
                 .collect(Collectors.toMap(Function.identity(),
-                        str->Collections.frequency(Arrays.asList(s.toLowerCase().split(" ")),str)));
+                        str->Collections.frequency(Arrays.asList(s.split(" ")),str)));
         System.out.println(values);
     }
 }

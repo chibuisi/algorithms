@@ -6,10 +6,10 @@ public class StringDivisibility {
     public static void main(String[] args) {
         String s =  "bcdbcdbcdbcd";
         String t = "bcdbcd";
-        int result = findSmalletDivisor(s,t);
+        int result = findSmallestDivisor(s,t);
         System.out.println(result);
     }
-    public static int findSmalletDivisor(String s, String t){
+    public static int findSmallestDivisor(String s, String t){
         StringBuilder str = new StringBuilder(t);
         while(str.length() < s.length()){
             str.append(t);

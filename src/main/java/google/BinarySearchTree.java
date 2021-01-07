@@ -8,7 +8,7 @@ package google;
 * 4. Inverting a BST
 * 6. Traversing a BST
  */
-public class ValidateBinarySearchTree {
+public class BinarySearchTree {
     public static void main(String[] args) {
         int [] nums = {1,2,3,5,6,8,9,11,14,15,18,25,124};
         BST root = constructMinHeightBST(nums);
@@ -17,6 +17,9 @@ public class ValidateBinarySearchTree {
         System.out.println(validateBST(root));
         BST invertedBST = invertBST(root);
         print(invertedBST);
+        BST mergedBST = mergeBST(root, invertedBST);
+        System.out.println();
+        print(mergedBST);
     }
     public static boolean validateBST(BST root){
         return isValid(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
@@ -49,6 +52,16 @@ public class ValidateBinarySearchTree {
         minHeightBST(nums, start, mid-1, node);
         minHeightBST(nums, mid+1, end, node);
         return node;
+    }
+    public static BST mergeBST(BST one, BST two){
+        if(one == null)
+            return two;
+        if(two == null)
+            return one;
+        one.value += two.value;
+        one.left = mergeBST(one.left, two.left);
+        one.right = mergeBST(one.right, two.right);
+        return one;
     }
     public static BST invertBST(BST root){
         if(root == null)

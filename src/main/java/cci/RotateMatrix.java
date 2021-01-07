@@ -17,25 +17,22 @@ public class RotateMatrix {
         }
     }
     public static void rotateMatrix(int[][]arr){
-        int sR = 0;
-        int sC = 0;
-        int eR = arr.length - 1;
-        int eC = arr[0].length - 1;
-
-        while(sR <= eR && sC <= eC){
-            for(int row = sR; row < eR; row++){
-                int value = arr[sR][sC];
-                arr[sR][sC] = arr[eR][sC];
-                arr[eR][sC] = arr[eR][eC];
-                arr[eR][eC] = arr[sR][eC];
-                arr[sR][eC] = value;
+        int N = arr.length;
+        //flip symmetrically
+        for(int i = 0; i < N; i++){
+            for(int j = i; j < N; j++){
+                int temp = arr[i][j];
+                arr[i][j] = arr[j][i];
+                arr[j][i] = temp;
             }
-
-
-            sR++;
-            sC++;
-            eR--;
-            eC--;
+        }
+        //flip horizontally
+        for(int i = 0; i < N; i++){
+            for(int j = 0; j < N/2; j++){
+                int temp = arr[i][j];
+                arr[i][j] = arr[i][N-1-j];
+                arr[i][N-1-j] = temp;
+            }
         }
     }
 }

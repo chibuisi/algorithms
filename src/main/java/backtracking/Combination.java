@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Combination {
     public static void main(String[] args) {
-        int [] nums = {2,3,6,7};
-        System.out.println(combinationSum2(nums,7));
+        int [] nums = {2,3,6,2,7};
+        System.out.println(combinationSum(nums,7));
     }
     public static List<List<Integer>> combinationSum(int [] nums, int target){
         List<List<Integer>> combinations = new ArrayList<>();

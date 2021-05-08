@@ -8,11 +8,11 @@ public class Permutation {
 //        Input: nums = [1,2,3]
 //        Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
         int [] nums = {7,1,8};
-        System.out.println(permuteIntegers(nums));
+        System.out.println(permute(nums));
         System.out.println(permute("abc"));
     }
 
-    public static List<List<Integer>> permuteIntegers(int [] nums){
+    public static List<List<Integer>> permute(int [] nums){
         List<List<Integer>> permutations = new ArrayList<>();
         backtrack(permutations, new ArrayList<>(), nums);
         return permutations;

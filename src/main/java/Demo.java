@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Demo {
     public static void main(String[] args) {
@@ -35,7 +36,7 @@ public class Demo {
 
         System.out.println(anagrams(words));
     }
-    public static List<List<String>> anagrams(List<String> words){
+    public static ArrayList<String> anagrams(List<String> words){
         if(words.size() == 0)
             return null;
         List<List<String>> result = new ArrayList<>();
@@ -60,9 +61,9 @@ public class Demo {
         for(Map.Entry e : anagrams.entrySet()){
             result.add((List<String>) e.getValue());
         }
-        return result;
+        return anagrams.entrySet().stream().flatMap(d -> d.getValue().stream()).collect(Collectors.toCollection(ArrayList<String>::new));
 
-
+        //return result;
     }
 
 }

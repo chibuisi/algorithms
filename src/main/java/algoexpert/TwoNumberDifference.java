@@ -7,16 +7,13 @@ public class TwoNumberDifference {
         int [] arr = {1,1,1,2};
         int value = countPairOfDifferences(arr,1);
         System.out.println(value);
+        System.out.println(countPairs(new ArrayList<>(Arrays.asList(1,1,1,2)),1));
     }
     public static int countPairOfDifferences(int [] array, int k){
-        List<Integer> numbers = new ArrayList<>();
         Map<Integer, HashSet<Integer[]>> nums = new HashMap<>();
-        Map<Integer, List<List<Integer>>> sumsAndPairs = new HashMap<>();
-        HashSet<Integer> set = new HashSet<>();
         int count = 0;
-        for(int i = 0; i < array.length; i++){
-            nums.put(array[i],new HashSet<Integer[]>());
-            //set.add(array[i]);
+        for(int i : array){
+            nums.put(i,new HashSet<Integer[]>());
         }
         for(int num : array){
             int diff = num - k;
@@ -24,9 +21,6 @@ public class TwoNumberDifference {
                 nums.get(diff).add(new Integer[]{num,diff});
                 count+= nums.get(diff).size();
             }
-//            if(set.contains(diff)){
-//                count++;
-//            }
         }
         return count;
     }

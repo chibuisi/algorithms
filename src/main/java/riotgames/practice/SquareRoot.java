@@ -7,6 +7,7 @@ public class SquareRoot {
     public static int sqrt(int num){
         return sqrt(num, 1, num);
     }
+
     public static int sqrt(int num, int min, int max){
         int guess = (min + max) / 2;
         if(guess * guess == num)

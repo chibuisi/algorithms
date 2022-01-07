@@ -21,4 +21,8 @@ public class ReverseString {
         return res.toString();
     }
 
+    public static String reverseLibrary(String str){
+        return new StringBuilder(str).reverse().toString();
+    }
+
 }

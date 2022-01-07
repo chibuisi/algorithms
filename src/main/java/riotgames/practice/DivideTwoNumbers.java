@@ -2,7 +2,7 @@ package riotgames.practice;
 
 public class DivideTwoNumbers {
     public static void main(String[] args) {
-
+        System.out.println(1<<0);
     }
     public static int divide(int dividend, int divisor){
         int a = Math.abs(dividend);

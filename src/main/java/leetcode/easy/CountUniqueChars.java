@@ -5,11 +5,19 @@ import java.util.HashSet;
 
 public class CountUniqueChars {
     public static void main(String[] args) {
-        String str = "ababa";
+        String str = "ababazgtavwopamljsguigdebkjhdihiebkjnoichjoiehihbeifdceddssd";
         long start = System.currentTimeMillis();
-        int res = countChars2(str);
+        int res = countChars(str);
         long end = System.currentTimeMillis();
+        long start2 = System.currentTimeMillis();
+        int res2 = countChars2(str);
+        long end2 = System.currentTimeMillis();
+        long start3 = System.currentTimeMillis();
+        int res3 = countChars3(str);
+        long end3 = System.currentTimeMillis();
         System.out.println(res + " took "+ (end - start) + " ms");
+        System.out.println(res2 + " took "+ (end2 - start2) + " ms");
+        System.out.println(res3 + " took "+ (end3 - start3) + " ms");
 
 
     }
@@ -19,7 +27,6 @@ public class CountUniqueChars {
         for(char c: str.toCharArray()){
             chars[c-'a']++;
         }
-        System.out.println(Arrays.toString(chars));
         int count = 0;
         for (int i = 0; i < chars.length; i++){
             if(chars[i] != 0){
@@ -34,5 +41,8 @@ public class CountUniqueChars {
             characters.add(c);
         }
         return characters.size();
+    }
+    public static int countChars3(String str){
+        return (int) str.chars().distinct().count();
     }
 }

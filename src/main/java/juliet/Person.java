@@ -1,12 +1,14 @@
 package juliet;
 
+import juliet.miu.Fruit;
+
 public class Person {
     private String firstName;
     private String lastName;
     private Integer age;
     private Address address;
 
-    public Person(String firstName, String lastName, int age){
+    public Person(String firstName, String lastName, Integer age){
         this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -56,5 +58,28 @@ public class Person {
     public String toString() {
         return "FirstName =" + firstName + " " + ", LastName= " + lastName + ",Age = " + age +", Address=" + address +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o instanceof Person)) {
+            return false;
+        }
+        Person p = (Person) o;
+        return this.getFirstName().equals(p.getFirstName())
+                && this.getLastName().equals(p.getLastName())
+                && this.getAge() == p.getAge();
+    }
+
+    public static void main(String[] args) {
+        Fruit f = new Fruit("A");
+        Person juliet = new Person();
+        Person fred = juliet;
+        //System.out.println(juliet == juliet);
+        System.out.println(juliet.equals(fred));
     }
 }

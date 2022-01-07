@@ -3,6 +3,7 @@ package backtracking;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Subsets {
     public static void main(String[] args) {
@@ -50,6 +51,8 @@ public class Subsets {
         return subsets;
     }
     private static void backtrack(List<List<String>> subsets, List<String> tempList, String str, int start){
+        //String temp = new String(tempList.stream().collect(Collectors.joining()));
+        //System.out.println(temp);
         subsets.add(new ArrayList<>(tempList));
         for(int i = start; i < str.length(); i++){
             tempList.add(String.valueOf(str.charAt(i)));

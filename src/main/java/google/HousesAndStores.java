@@ -8,7 +8,7 @@ public class HousesAndStores {
     public static void main(String[] args) {
         int [] houses = new int[]{2,4,2};
         int [] stores = new int[]{5,1,2,3};
-        int [] res = shortestDistance(houses,stores);
+        int [] res = shorterDistance(houses,stores);
         System.out.println(Arrays.toString(res));
     }
 
@@ -32,20 +32,5 @@ public class HousesAndStores {
             else result[i] = set.ceiling(houses[i]);
         }
         return result;
-    }
-
-    public static int[] shortestDistance(int[]houses, int[]stores){
-        int [] res = new int[houses.length];
-        for(int i = 0; i < houses.length; i++){
-            int minDiff = houses[i];
-            for(int j = 0; j < stores.length; j++){
-                int absDiff = Math.abs(houses[i] - stores[j]);
-                if(absDiff <= minDiff){
-                    minDiff = stores[j];
-                }
-            }
-            res[i] = minDiff;
-        }
-        return res;
     }
 }

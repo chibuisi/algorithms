@@ -2,12 +2,12 @@ package geeks;
 
 public class  MissingElement {
     public static void main(String[] args) {
-        int [] nums = {1,2,4,5,6};
+        int [] nums = {1,2,3,5};
         System.out.println(findMissingElement(nums));
         System.out.println(findMissingElementOptimized(nums));
     }
     public static int findMissingElement(int [] nums){
-        //using total = n(n+1)/2 == ((n+1)(n+2))/2
+        //using )total = n(n+1)/2 == ((n+1)(n+2))/2
         int total = ((nums.length + 1) * (nums.length + 2)) / 2;
         for(int i = 0 ; i < nums.length; i++){
             total -= nums[i];

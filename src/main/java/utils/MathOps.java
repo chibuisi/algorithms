@@ -11,7 +11,7 @@ public class MathOps {
         //System.out.println(mul(3,2));
         //System.out.println(divUsingBits(10,3));
         //System.out.println(mod(5,2));
-        System.out.println(pow2(2,3 ));
+        System.out.println(pow(2,3 ));
         //System.out.println(sqrt(16));
         //System.out.println(subtract(5,3));
         //System.out.println(MaxInt());

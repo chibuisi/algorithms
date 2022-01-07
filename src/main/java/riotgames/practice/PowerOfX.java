@@ -2,7 +2,7 @@ package riotgames.practice;
 
 public class PowerOfX {
     public static void main(String[] args) {
-        System.out.println(power(4.5463,4));
+        System.out.println(power(2,3));
     }
     public static double power(double x, int n){
         if(n == 0)

@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class GraphIslands {
     public static void main(String[] args) {
-        int arr [][] = {{1, 1, 0, 0, 0},
+        int arr [][] = {{1, 1, 0, 1, 1},
                         {0, 1, 0, 0, 1},
                         {1, 0, 0, 1, 1},
                         {0, 0, 0, 0, 0},
@@ -13,7 +13,7 @@ public class GraphIslands {
         System.out.println(countIslands(arr));
     }
     public static boolean isSafe(int [][] matrix, int i, int j, boolean [][] visited){
-        return (i >= 0) && (j >= 0) && (i < matrix.length-1) && (j < matrix[0].length)
+        return (i >= 0) && (j >= 0) && (i < matrix.length-1) && (j < matrix[0].length-1)
                 && matrix[i][j] == 1 && (!visited[i][j]);
     }
     public static void BFS(int [][] matrix, boolean [][] visited, int i, int j){

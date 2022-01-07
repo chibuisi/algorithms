@@ -2,7 +2,8 @@ package practice;
 
 public class NumberPalindrome {
     public static void main(String[] args) {
-        System.out.println(numberPalindrome(1011));
+        System.out.println(numberPalindrome(101101));
+        System.out.println(numberPalindrome(5555));
         System.out.println(numberPalindrome(10101));
     }
 

@@ -8,7 +8,7 @@ public class SurroundedRegions {
                 {'X','X','X','X'},
                 {'X','0','0','X'},
                 {'X','X','0','X'},
-                {'X','X','X','X'}
+                {'X','0','X','X'}
         };
         solve(board);
         for(char [] arr : board){
@@ -18,24 +18,24 @@ public class SurroundedRegions {
         }
     }
     public static boolean isSafe(char [][] board, int i, int j){
-        return i >= 0 && i < board.length-1 && j >= 0 && j < board[0].length && board[i][j] == '0';
+        return i >= 0 && i < board.length && j >= 0 && j < board[0].length && board[i][j] == '0';
     }
     public static void solve(char [][] board){
-        int rows = board.length-1;
-        int columns = board[0].length-1;
+        int rows = board.length;
+        int columns = board[0].length;
 
         for(int i = 0; i < rows; i++){
             if(board[i][0] == '0')
                 DFS(board, i, 0);
-            if(board[i][columns] == '0')
-                DFS(board, i, columns);
+            if(board[i][columns-1] == '0')
+                DFS(board, i, columns-1);
         }
 
         for(int i = 0; i < columns; i++){
             if(board[0][i] == '0')
                 DFS(board, i, 0);
-            if(board[rows][i] == '0')
-                DFS(board, rows, i);
+            if(board[rows-1][i] == '0')
+                DFS(board, rows-1, i);
         }
 
         for(int i = 0; i < rows; i++){
@@ -48,7 +48,7 @@ public class SurroundedRegions {
         }
     }
     public static void DFS(char [][] board, int i, int j){
-        if(isSafe(board, i, j))
+        //if(isSafe(board, i, j))
             board[i][j] = '*';
         if(isSafe(board, i+1, j))
             DFS(board, i+1, j);

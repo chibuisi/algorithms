@@ -39,5 +39,22 @@ public class Collections {
         Collection<Object> objectsPriorityQueue = new PriorityQueue<>();
         Collection<Object> objectsHashSet = new HashSet<>();
         Collection<Object> objectsTreeSet = new TreeSet<>();
+        Collection<Object> objects = new ArrayDeque<>();
+
+
+        Set<Integer> integerHash = new HashSet<>();
+        integerHash.add(3); integerHash.add(2); integerHash.add(1);//3,2,1
+        Set<Integer> integerTree = new TreeSet<>();
+        integerTree.add(3); integerTree.add(2); integerTree.add(1);//1,2,3
+        System.out.println(integerHash);
+        System.out.println(integerTree);
+
+        String [] array = {"hate", "crime", "suicide", "rape"};
+        List<String> list = Arrays.asList(array);
+        String [] arr = list.toArray(new String[list.size()]);
+        System.out.println(list);
+        java.util.Collections.reverse(list);
+        System.out.println(list);
+        //System.out.println(Arrays.toString(arr));
     }
 }

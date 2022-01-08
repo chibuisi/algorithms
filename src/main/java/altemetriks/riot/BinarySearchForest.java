@@ -9,6 +9,7 @@ public class BinarySearchForest {
         int [] arr = {2,3,6,2,4};
         //System.out.println(2-3);
         System.out.println(solutionThree(arr, 4));
+        System.out.println(solutionOne(arr, 4));
     }
     public static int solutionOne(int [] array, int k){
         int total = Arrays.stream(array).sum();

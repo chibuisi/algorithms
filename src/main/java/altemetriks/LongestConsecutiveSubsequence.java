@@ -6,6 +6,7 @@ import java.util.Set;
 public class LongestConsecutiveSubsequence {
     public static void main(String[] args) {
         int arr[] = { 1, 9, 3, 10, 4, 20, 2, 15,16,17,18,19 };
+        int arr2[] = { 1, 9, 3, 10, 4, 20, 2 };
         System.out.println(countSequences(arr));
     }
     public static int countSequences(int [] nums){

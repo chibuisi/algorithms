@@ -4,7 +4,7 @@ public class BinarySearch {
     //Array has to be sorted for binary search to work
     public static void main(String[] args) {
         int [] arr = {1,2,3,4,6};
-        //int value = iterativeBinarySearch(arr,20);
+        //int value = iterativeBinarySearch(arr,1);
         int value = recursiveBinarySearch(arr,1);
         System.out.println(value);
     }
@@ -38,6 +38,6 @@ public class BinarySearch {
             return recursiveBinarySearch(array,midpoint+1,end,value);
         }
         else
-            return recursiveBinarySearch(array,start,midpoint,value);
+            return recursiveBinarySearch(array,start,midpoint-1,value);
     }
 }

@@ -10,6 +10,7 @@ public class Combination {
         int [] nums2 = {8, 2, 2, 4, 5, 6, 3};
         System.out.println(combinationSum(nums2,9));
         System.out.println(combinationSum2(nums2,9));
+        System.out.println(combinationSum(nums,7));
     }
     public static List<List<Integer>> combinationSum(int [] nums, int target){
         Arrays.sort(nums);

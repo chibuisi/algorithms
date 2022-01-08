@@ -7,6 +7,7 @@ public class Palindrome {
     public static void main(String[] args) {
         System.out.println(palindromes("tacocat"));
         //System.out.println(palindromes2("tacocat"));
+        System.out.println(palindromes2("tacocat"));
     }
     public static List<List<String>> palindromes(String word){
         List<List<String>> palindromes = new ArrayList<>();

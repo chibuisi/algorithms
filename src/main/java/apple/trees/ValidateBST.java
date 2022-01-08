@@ -15,8 +15,10 @@ public class ValidateBST {
     }
 
     private static boolean isValid(BST tree, int minValue, int maxValue) {
-        if(minValue > maxValue)
+        if(tree.value < minValue || tree.value > maxValue)
             return false;
+        if(tree == null)
+            return true;
         if(tree.left != null && !isValid(tree.left, maxValue, tree.value))
             return false;
         if(tree.right != null && !isValid(tree.right, tree.value, maxValue))

@@ -6,6 +6,7 @@ public class SurroundedRegions {
                 {'X','X','X','X'},
                 {'X','0','0','X'},
                 {'0','X','0','X'},
+                {'0','0','0','X'},
                 {'0','0','X','X'}
         };
         solve(board);

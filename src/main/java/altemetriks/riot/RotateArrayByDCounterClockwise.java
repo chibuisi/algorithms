@@ -8,6 +8,7 @@ public class RotateArrayByDCounterClockwise {
     public static void main(String[] args) {
         int [] arr = {1,2,3,4,5};
         System.out.println(Arrays.toString(solutionOne(arr,2)));
+        System.out.println(Arrays.toString(solutionTwo(arr,2)));
     }
     public static int [] solutionOne(int [] array, int d){
         int [] result = new int [array.length];

@@ -8,21 +8,21 @@ public class ContainerWithMostWater {
         int right = array.length-1;
         int max = Integer.MIN_VALUE;
         while (left < right){
-            if(array[left] < array[right]){
+            if(array[left] > array[right]){
                 max = Integer.max(max, array[left] * right - left);
-                left++;
+                right--;
             }else{
                 max = Integer.max(max, array[right] * right - left);
-                right--;
+                left++;
             }
         }
         return max;
     }
-    /*Input: height =  [4,3,2,1,4]
-    Output: 16*/
+    /*Input: height =  [1,8,6,2,5,4,8,3,7]
+    Output: 49*/
 
     public static void main(String[] args) {
-        int [] arr = {4,3,2,1,4};
+        int [] arr = {1,8,6,2,5,4,8,3,7};
         System.out.println(solve(arr));
     }
 }

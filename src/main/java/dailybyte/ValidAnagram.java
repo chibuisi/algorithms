@@ -17,8 +17,25 @@ public class ValidAnagram {
         return true;
     }
 
+    public static boolean solve2(String s1, String s2){
+        if(s1.length() != s2.length())
+            return false;
+        int [] arr = new int[24];
+        for(int i = 0; i < s1.length(); i++){
+            arr[s1.charAt(i) - 'a']++;
+            arr[s2.charAt(i) - 'a']++;
+        }
+        for(int i = 0; i < s1.length(); i++){
+            if(arr[s1.charAt(i) - 'a'] != 2)
+                return false;
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println(solve("listen", "silent"));
+        System.out.println(solve2("listen", "silent"));
         System.out.println(solve("books", "skobb"));
+        System.out.println(solve2("books", "skobb"));
     }
 }

@@ -16,7 +16,7 @@ public class WordSearch {
     private static boolean search(int i, int j, int index, String word, char[][] board) {
         if(index == word.length())
             return true;
-        if(i < 0 || j < 0 || i >= board.length || j >= board.length || word.charAt(index) != board[i][j])
+        if(i < 0 || j < 0 || i >= board.length || j >= board[i].length || word.charAt(index) != board[i][j])
             return false;
         //char temp = board[i][j];
         //board[i][j] = ' ';

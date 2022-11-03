@@ -24,7 +24,22 @@ public class Fibonacci {
         return num > 0 ? lastTwo[1] : lastTwo[0];
     }
 
+    public static int fib3(int num){
+        if(num <= 0)
+            return num;
+        int step1 = 0, step2 = 1;
+        while(num > 1){
+            int currStep = step1 + step2;
+            step1 = step2;
+            step2 =currStep;
+            num--;
+        }
+        return step2;
+    }
     public static void main(String[] args) {
-        System.out.println(fib2(10));
+        System.out.println(fib2(3));
+        System.out.println(fib2(2));
+        System.out.println(fib3(3));
+        System.out.println(fib3(2));
     }
 }

@@ -1,6 +1,8 @@
 package nickwhite.matrix;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RotateImage {
     public static int[][] solve(int [][] matrix){
@@ -24,6 +26,7 @@ public class RotateImage {
             }
         }
 
+        Set<String> seen = new HashSet<>();
         return matrix;
     }
 
